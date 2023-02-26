@@ -1,4 +1,4 @@
-import Item from 'developer-excercise/src/item/item.entity';
+import Item from 'src/item/item.entity';
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

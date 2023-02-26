@@ -1,4 +1,4 @@
-import Deal from 'developer-excercise/src/deal/deal.entity';
+import Deal from 'src/deal/deal.entity';
 import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

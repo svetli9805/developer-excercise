@@ -1,0 +1,27 @@
+version: "3.7"
+volumes:
+  shop-db-vol:
+
+services:
+  shop-service:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    env_file:
+      - .env.default
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - shop-postgres
+
+  shop-postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin_password
+      POSTGRES_DB: shop-db
+    ports:
+      - "5434:5432"
+    volumes:
+      - shop-db-vol:/var/lib/postgresql/data
